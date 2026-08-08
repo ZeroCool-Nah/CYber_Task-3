@@ -1,11 +1,11 @@
 # TryHackMe: OWASP Top 10 (2025) – Cryptographic Failures (AS04)
 
-## 📌 Overview
+##  Overview
 This repository contains a write-up and step-by-step walkthrough for the **Cryptographic Failures (AS04)** challenge in the **TryHackMe OWASP Top 10 (2025)** room. The task demonstrates how hardcoding secrets in client-side code and utilizing insecure cipher modes leads to confidential system data exposure.
 
 ---
 
-## 🎯 Target Information
+##  Target Information
 * **Room:** TryHackMe OWASP Top 10 (2025)
 * **Category:** AS04 - Cryptographic Failures
 * **Target Application:** Secure Document Viewer (`http://10.114.189.174:5004`)
@@ -40,7 +40,7 @@ const KEY_SIZE = 128;
 - Secret Key: my-secret-key-16 (16 bytes / 128 bits)
 - Cipher Mode: ECB (Electronic Codebook)
 - Encoding: Base64
-## 🔓 Exploitation & Decryption
+##  Exploitation & Decryption
 Using CyberChef, we configure a decryption pipeline with the extracted parameters.
 ### CyberChef Recipe Parameters:
 - From Base64
