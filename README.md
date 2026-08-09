@@ -19,10 +19,10 @@ Welcome to the central repository for **CYber_Task-3**. This repository contains
 
 | OWASP Category | Target App | Core Vulnerability | Key Tools Used | Status |
 | :--- | :--- | :--- | :--- | :---: |
-| **AS04: Cryptographic Failures** | Secure Document Viewer | Hardcoded client secrets & weak decryption logic | DevTools, Python | `Completed` |
-| **Insecure Design** | SecureChat | Unauthenticated internal API (`/api/messages/admin`) | Gobuster, DevTools | `Completed` |
-| **Security Misconfiguration** | Lab Environment | Verbose errors, default configurations | Nmap, Gobuster | `Completed` |
-| **Software Supply Chain Failures** | Application Dependencies | Compromised / vulnerable package imports | Dependency Check | `Completed` |
+| **AS04: Cryptographic Failures** | Secure Document Viewer | Hardcoded client secrets & weak decryption logic | DevTools, Python, Cyberchef | `Completed` |
+| **AS06: Insecure Design** | SecureChat | Unauthenticated internal API (`/api/messages/admin`) | Gobuster, DevTools | `Completed` |
+| **AS02: Security Misconfiguration** | Lab Environment | Verbose errors, default configurations | Nmap, Gobuster | `Completed` |
+| **AS03: Software Supply Chain Failures** | Application Dependencies | Compromised / vulnerable package imports | Dependency Check | `Completed` |
 
 ---
 
@@ -32,7 +32,7 @@ Welcome to the central repository for **CYber_Task-3**. This repository contains
 | :--- | :--- | :--- |
 | **Reconnaissance** | `Gobuster`, `Nmap` | Directory brute-forcing and network port discovery |
 | **Web Analysis** | Firefox DevTools | Network traffic monitoring, cookie & JSON analysis |
-| **Exploitation** | `cURL`, Python (`requests`) | Interacting with unauthenticated REST APIs |
+| **Exploitation** | `curl`, Python (`requests`) | Interacting with unauthenticated REST APIs |
 | **OS & Shell** | Kali Linux | Terminal execution environment |
 
 ---
@@ -42,12 +42,9 @@ Welcome to the central repository for **CYber_Task-3**. This repository contains
 | Vulnerability Category | Flag |
 | :--- | :--- |
 | **Insecure Design** | `THM{1NS3CUR3_D3S1GN_4SSUMPT10N}` |
-| **Cryptographic Failures** | *(Documented in task folder)* |
-| **Security Misconfiguration** | *(Documented in task folder)* |
-| **Software Supply Chain Failures** | *(Documented in task folder)* |
+| **Cryptographic Failures** | `THM{CRYPTO_FAILURE_H4RDCOD3D_K3Y}` |
+| **Security Misconfiguration** | `THM{V3RB0S3_3RR0R_L34K}`|
+| **Software Supply Chain Failures** | `THM{SUPPLY_CH41N_VULN3R4B1L1TY}` |
 
 ---
 
-## 🔒 Disclaimer
-
-*All write-ups, scripts, and commands documented in this repository are created solely for educational purposes and authorized penetration testing within TryHackMe labs. Unsanctioned testing against external targets is strictly illegal.*
